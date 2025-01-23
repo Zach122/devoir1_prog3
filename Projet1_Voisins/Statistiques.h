@@ -4,3 +4,5 @@
 #include <vector>
 
 using namespace std;
+
+float CalculerMoyenne(vector<float>);
