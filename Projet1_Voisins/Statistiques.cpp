@@ -10,3 +10,9 @@ float CalculerMedianne()
 {
 	return 0f;
 }
+
+float CalculerMoyenne(vector<float>)
+{
+
+	return 0.0f;
+}
