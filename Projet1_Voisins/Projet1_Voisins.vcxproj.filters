@@ -18,5 +18,19 @@
     <ClCompile Include="Projet1_Voisins.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Statistiques.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RessourceLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Statistiques.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RessourceLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
