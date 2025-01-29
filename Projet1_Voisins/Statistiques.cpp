@@ -7,7 +7,6 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 /// <summary>
 /// Méthode qui calcul la moyenne des valeurs reçues
 /// </summary>
@@ -122,15 +121,3 @@ float CalculerDistanceManhattan(const vector<float> point1, const vector<float> 
 
     return distance;
 }
-=======
-float CalculerMedianne() 
-{
-	return 0f;
-}
-
-float CalculerMoyenne(vector<float>)
-{
-
-	return 0.0f;
-}
->>>>>>> 03422998b8fe28e5770c4caf80f85395646a0733
