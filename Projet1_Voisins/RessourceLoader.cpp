@@ -5,6 +5,43 @@
 
 #include "RessourceLoader.h"
 
+/// <summary>
+/// Méthode permettant de conveertir un vecteur de chaine de charactères en vecteur de float.
+/// </summary>
+/// <param name="rangee">La rangée. Le vecteur de chaine de caractères.</param>
+/// <returns>Un vecteur de nombre flotant. </returns>
+std::vector<std::vector<std::string>> ImportationDonnees(const std::string cheminFichier) {
+    std::ifstream fichier(cheminFichier);
+    std::vector<std::vector<std::string>> donnees; // Stocke toutes les lignes et colonnes
+
+
+    // Vérifier si le fichier s'ouvre correctement
+    if (!fichier.is_open()) {
+        std::cerr << "Erreur : Impossible d'ouvrir le fichier " << cheminFichier << std::endl;
+        return donnees;
+    }
+
+    std::string ligne;
+
+
+    // Lire le fichier ligne par ligne
+    while (std::getline(fichier, ligne)) {
+        std::stringstream ss(ligne); // Convertit la ligne en stream
+        std::string cellule;
+        std::vector<std::string> ligneActuelle;
+
+        // Diviser la ligne en colonnes en utilisant ',' comme délimiteur
+        while (std::getline(ss, cellule, ',')) {
+            ligneActuelle.push_back(cellule);
+        }
+        donnees.push_back(ligneActuelle);
+    }
+
+    fichier.close();
+
+    return donnees;
+}
+
 
 /// <summary>
 /// Méthode permettant de conveertir un vecteur de chaine de charactères en vecteur de float.
@@ -57,7 +94,7 @@ std::vector<std::vector<float>> GetTestData(float ratio, const std::vector<std::
 
     size_t tailleTest = static_cast<size_t>(donnees.size() * ratio); // On va chercher la taille des données désirées.
 
-    for (size_t i = tailleTest - 1; i >= 0; --i) { // On parcour les données en se fiant sur la taille trouvée.
+    for (size_t i = static_cast<size_t>(donnees.size() * ratio); i < donnees.size(); ++i) {
         donneesTests.push_back(ConvertirLigneAFloat(donnees[i]));
     }
 
