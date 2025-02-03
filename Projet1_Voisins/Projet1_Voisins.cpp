@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
+#include <sstream>
 
 #include "Statistiques.h"
 #include "RessourceLoader.h"
+#include "Noeud.h"
 
 using namespace std;
 
@@ -27,8 +30,8 @@ int main()
     //float distanceManhattan = CalculerDistanceManhattan(point1, point2);
     //cout << "\nDistance : " << distanceManhattan;
 
-        // Chemin vers le fichier CSV
-    std::string cheminFichier = "C:/Users\zacha\Desktop\Session Hiver 2025\Prog 3\binary-winequality-white.csv";
+    // Chemin vers le fichier CSV
+    std::string cheminFichier = "C:/Users/pelch/OneDrive/Bureau/Prog3/Projet1/devoir1_prog3/binary-winequality-white.csv";
     std::ifstream fichier(cheminFichier);
 
     // Vérifier si le fichier s'ouvre correctement
@@ -65,4 +68,5 @@ int main()
     }
 
     return 0;
+
 }

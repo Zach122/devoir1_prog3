@@ -4,7 +4,8 @@
 #include <vector>
 
 #include "RessourceLoader.h"
-
+#include "Liste.h"
+#include "Noeud.h"
 
 /// <summary>
 /// Méthode permettant de conveertir un vecteur de chaine de charactères en vecteur de float.
@@ -62,4 +63,28 @@ std::vector<std::vector<float>> GetTestData(float ratio, const std::vector<std::
     }
 
     return donneesTests;
+}
+
+/// <summary>
+/// Méthode me permettant de retourner les données entrainées de mon fichier csv.
+/// </summary>
+/// <param name="ratio">Le ratio désiré. C'est un float. </param>
+/// <param name="donnees">Les données que l'on veut entrainer.</param>
+/// <returns>On retourne le tableau des données entrainées.</returns>
+void GetTrainDataLinked(float ratio, const std::vector<std::vector<std::string>>& donnees) {
+    std::vector<std::vector<float>> donneesEntrainees;
+    Liste liste;
+
+    size_t tailleEntrainement = static_cast<size_t>(donnees.size() * ratio); // On va chercher la taille des données désirées.
+
+    for (size_t i = 0; i < tailleEntrainement; ++i) { // On parcour les données en se fiant sur la taille trouvée.
+        liste.ajouter(ConvertirLigneAFloat(donnees[i]));
+    }
+
+    /*Noeud* courant = liste.getPremierPointeur();
+    while (courant != nullptr) {
+        std::cout << courant->donnee;                        //Pas sûr
+        courant = courant->suivant;
+    }*/
+
 }

@@ -127,11 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Liste.cpp" />
     <ClCompile Include="Projet1_Voisins.cpp" />
     <ClCompile Include="RessourceLoader.cpp" />
     <ClCompile Include="Statistiques.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Liste.h" />
+    <ClInclude Include="Noeud.h" />
     <ClInclude Include="RessourceLoader.h" />
     <ClInclude Include="Statistiques.h" />
   </ItemGroup>
