@@ -8,17 +8,17 @@
 #include "Noeud.h"
 
 /// <summary>
-/// Méthode permettant de conveertir un vecteur de chaine de charactères en vecteur de float.
+/// MÃ©thode permettant de conveertir un vecteur de chaine de charactÃ¨res en vecteur de float.
 /// </summary>
-/// <param name="rangee">La rangée. Le vecteur de chaine de caractères.</param>
+/// <param name="rangee">La rangÃ©e. Le vecteur de chaine de caractÃ¨res.</param>
 /// <returns>Un vecteur de nombre flotant. </returns>
 std::vector<float> ConvertirLigneAFloat(const std::vector<std::string>& rangee) {
     std::vector<float> floatRangee;
 
-    for (const auto& cellule : rangee) { // Pour chaque cellule en référence (qui ne peut pas être modifié et "auto" permet au compilateur de déduire automatiquement le type d'une variable)
+    for (const auto& cellule : rangee) { // Pour chaque cellule en rÃ©fÃ©rence (qui ne peut pas Ãªtre modifiÃ© et "auto" permet au compilateur de dÃ©duire automatiquement le type d'une variable)
         try {
             float valeur = std::stof(cellule); // Convertire la cellule en float.
-            floatRangee.push_back(valeur); // L'ajouter à la fin du tableau.
+            floatRangee.push_back(valeur); // L'ajouter Ã  la fin du tableau.
         }
         catch (const std::invalid_argument& e) { // S'il y a une erreur.
             throw std::runtime_error("Incapable de convertir la cellule: " + cellule); // Je l'affiche.
@@ -29,17 +29,17 @@ std::vector<float> ConvertirLigneAFloat(const std::vector<std::string>& rangee) 
 
 
 /// <summary>
-/// Méthode me permettant de retourner les données entrainées de mon fichier csv.
+/// MÃ©thode me permettant de retourner les donnÃ©es entrainÃ©es de mon fichier csv.
 /// </summary>
-/// <param name="ratio">Le ratio désiré. C'est un float. </param>
-/// <param name="donnees">Les données que l'on veut entrainer.</param>
-/// <returns>On retourne le tableau des données entrainées.</returns>
+/// <param name="ratio">Le ratio dÃ©sirÃ©. C'est un float. </param>
+/// <param name="donnees">Les donnÃ©es que l'on veut entrainer.</param>
+/// <returns>On retourne le tableau des donnÃ©es entrainÃ©es.</returns>
 std::vector<std::vector<float>> GetTrainData(float ratio, const std::vector<std::vector<std::string>>& donnees) {
     std::vector<std::vector<float>> donneesEntrainees;
 
-    size_t tailleEntrainement = static_cast<size_t>(donnees.size() * ratio); // On va chercher la taille des données désirées.
+    size_t tailleEntrainement = static_cast<size_t>(donnees.size() * ratio); // On va chercher la taille des donnÃ©es dÃ©sirÃ©es.
 
-    for (size_t i = 0; i < tailleEntrainement; ++i) { // On parcour les données en se fiant sur la taille trouvée.
+    for (size_t i = 0; i < tailleEntrainement; ++i) { // On parcour les donnÃ©es en se fiant sur la taille trouvÃ©e.
         donneesEntrainees.push_back(ConvertirLigneAFloat(donnees[i]));
     }
 
@@ -47,18 +47,18 @@ std::vector<std::vector<float>> GetTrainData(float ratio, const std::vector<std:
 }
 
 /// <summary>
-/// Méthode me permettant de retourner les données à tester de mon fichier csv.
+/// MÃ©thode me permettant de retourner les donnÃ©es Ã  tester de mon fichier csv.
 /// </summary>
-/// <param name="ratio">Le ratio désiré. C'est un float. </param>
-/// <param name="donnees">Les données que l'on veut tester.</param>
-/// <returns>On retourne le tableau des données testées.</returns>
+/// <param name="ratio">Le ratio dÃ©sirÃ©. C'est un float. </param>
+/// <param name="donnees">Les donnÃ©es que l'on veut tester.</param>
+/// <returns>On retourne le tableau des donnÃ©es testÃ©es.</returns>
 std::vector<std::vector<float>> GetTestData(float ratio, const std::vector<std::vector<std::string>>& donnees) {
 
     std::vector<std::vector<float>> donneesTests;
 
-    size_t tailleTest = static_cast<size_t>(donnees.size() * ratio); // On va chercher la taille des données désirées.
+    size_t tailleTest = static_cast<size_t>(donnees.size() * ratio); // On va chercher la taille des donnÃ©es dÃ©sirÃ©es.
 
-    for (size_t i = tailleTest - 1; i >= 0; --i) { // On parcour les données en se fiant sur la taille trouvée.
+    for (size_t i = tailleTest - 1; i >= 0; --i) { // On parcour les donnÃ©es en se fiant sur la taille trouvÃ©e.
         donneesTests.push_back(ConvertirLigneAFloat(donnees[i]));
     }
 
@@ -66,24 +66,24 @@ std::vector<std::vector<float>> GetTestData(float ratio, const std::vector<std::
 }
 
 /// <summary>
-/// Méthode me permettant de retourner les données entrainées de mon fichier csv.
+/// MÃ©thode me permettant de retourner les donnÃ©es entrainÃ©es de mon fichier csv.
 /// </summary>
-/// <param name="ratio">Le ratio désiré. C'est un float. </param>
-/// <param name="donnees">Les données que l'on veut entrainer.</param>
-/// <returns>On retourne le tableau des données entrainées.</returns>
+/// <param name="ratio">Le ratio dÃ©sirÃ©. C'est un float. </param>
+/// <param name="donnees">Les donnÃ©es que l'on veut entrainer.</param>
+/// <returns>On retourne le tableau des donnÃ©es entrainÃ©es.</returns>
 void GetTrainDataLinked(float ratio, const std::vector<std::vector<std::string>>& donnees) {
     std::vector<std::vector<float>> donneesEntrainees;
     Liste liste;
 
-    size_t tailleEntrainement = static_cast<size_t>(donnees.size() * ratio); // On va chercher la taille des données désirées.
+    size_t tailleEntrainement = static_cast<size_t>(donnees.size() * ratio); // On va chercher la taille des donnÃ©es dÃ©sirÃ©es.
 
-    for (size_t i = 0; i < tailleEntrainement; ++i) { // On parcour les données en se fiant sur la taille trouvée.
+    for (size_t i = 0; i < tailleEntrainement; ++i) { // On parcour les donnÃ©es en se fiant sur la taille trouvÃ©e.
         liste.ajouter(ConvertirLigneAFloat(donnees[i]));
     }
 
     /*Noeud* courant = liste.getPremierPointeur();
     while (courant != nullptr) {
-        std::cout << courant->donnee;                        //Pas sûr
+        std::cout << courant->donnee;                        //Pas sÃ»r
         courant = courant->suivant;
     }*/
 

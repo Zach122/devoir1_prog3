@@ -6,7 +6,6 @@
 
 #include "Statistiques.h"
 #include "RessourceLoader.h"
-#include "Noeud.h"
 
 using namespace std;
 
@@ -30,43 +29,27 @@ int main()
     //float distanceManhattan = CalculerDistanceManhattan(point1, point2);
     //cout << "\nDistance : " << distanceManhattan;
 
-    // Chemin vers le fichier CSV
-    std::string cheminFichier = "C:/Users/pelch/OneDrive/Bureau/Prog3/Projet1/devoir1_prog3/binary-winequality-white.csv";
-    std::ifstream fichier(cheminFichier);
 
-    // Vérifier si le fichier s'ouvre correctement
-    if (!fichier.is_open()) {
-        std::cerr << "Erreur : Impossible d'ouvrir le fichier " << cheminFichier << std::endl;
-        return 1;
-    }
+     // Chemin vers le fichier CSV
+    std::string cheminFichier = "C:/Users/zacha/Desktop/Session Hiver 2025/Prog 3/binary-winequality-white.csv";
+    float ratio = 0.8;
 
-    std::string ligne;
-    std::vector<std::vector<std::string>> donnees; // Stocke toutes les lignes et colonnes
+    std::vector<std::vector<std::string>> donnees;
+    std::vector<std::vector<float>> donneesEntraine;
+    std::vector<std::vector<float>> donneesTestes;
+
+    donnees = ImportationDonnees(cheminFichier);
+    donneesEntraine = GetTrainData(ratio, donnees);
+    donneesTestes = GetTestData(ratio, donnees);
+    int index = 0;
 
 
-    // Lire le fichier ligne par ligne
-    while (std::getline(fichier, ligne)) {
-        std::stringstream ss(ligne); // Convertit la ligne en stream
-        std::string cellule;
-        std::vector<std::string> ligneActuelle;
-
-        // Diviser la ligne en colonnes en utilisant ',' comme délimiteur
-        while (std::getline(ss, cellule, ',')) {
-            ligneActuelle.push_back(cellule);
+    for (const auto& ligne : donneesTestes) { // Parcours des lignes
+        for (const auto& cellule : ligne) { // Parcours des colonnes
+            std::cout << cellule << " "; // Affichage des cellules
         }
-        donnees.push_back(ligneActuelle);
-    }
-
-    fichier.close();
-
-    // Afficher les données pour vérifier
-    for (const auto& ligne : donnees) {
-        for (const auto& cellule : ligne) {
-            std::cout << cellule << " ";
-        }
-        std::cout << std::endl;
+        std::cout << std::endl; // Retour Ã  la ligne aprÃ¨s chaque ligne de donnÃ©es
     }
 
     return 0;
-
 }

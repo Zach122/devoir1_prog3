@@ -5,11 +5,10 @@
 using namespace std;
 
 vector<float> ConvertirLigneAFloat(const std::vector<std::string>&);
+std::vector<std::vector<std::string>> ImportationDonnees(const std::string);
+std::vector<float> ConvertirLigneAFloat(const std::vector<std::string>&);
+std::vector<std::vector<float>> GetTrainData(float, const std::vector<std::vector<std::string>>&);
+std::vector<std::vector<float>> GetTestData(float, const std::vector<std::vector<std::string>>&);class RessourceLoader {
 void GetTrainDataLinked(float ratio, const std::vector<std::vector<std::string>>& donnees);
-vector<float> GetTrainData(int, vector<float>);
-vector<float> GetTestData(int, vector<float>);
-
-class RessourceLoader {
-
 };
 
