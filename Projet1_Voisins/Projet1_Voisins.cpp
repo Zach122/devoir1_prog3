@@ -6,6 +6,7 @@
 
 #include "Statistiques.h"
 #include "RessourceLoader.h"
+#include "Liste.h"
 
 using namespace std;
 
@@ -35,20 +36,29 @@ int main()
     float ratio = 0.8;
 
     std::vector<std::vector<std::string>> donnees;
-    std::vector<std::vector<float>> donneesEntraine;
-    std::vector<std::vector<float>> donneesTestes;
+    Liste listeDonneesEntrainees;
+    Liste listeDonneesTestees;
 
-    donnees = ImportationDonnees(cheminFichier);
-    donneesEntraine = GetTrainData(ratio, donnees);
-    donneesTestes = GetTestData(ratio, donnees);
+    listeDonneesEntrainees = GetTrainDataLinked(ratio, cheminFichier);
+    listeDonneesTestees = GetTestDataLinked(ratio, cheminFichier);
     int index = 0;
 
-
-    for (const auto& ligne : donneesTestes) { // Parcours des lignes
-        for (const auto& cellule : ligne) { // Parcours des colonnes
-            std::cout << cellule << " "; // Affichage des cellules
+    // Afficher les données de listeDonneesEntrainees
+    cout << "Données Entraînées :" << endl;
+    for (const auto& ligne : listeDonneesEntrainees.getDonnees()) {
+        for (const auto& valeur : ligne) {
+            std::cout << valeur << " ";
         }
-        std::cout << std::endl; // Retour à la ligne après chaque ligne de données
+        std::cout << std::endl;
+    }
+
+    // Afficher les données de listeDonneesTestees
+    cout << "\nDonnées Testées :" << endl;
+    for (const auto& ligne : listeDonneesTestees.getDonnees()) {
+        for (const auto& valeur : ligne) {
+            std::cout << valeur << " ";
+        }
+        std::cout << std::endl;
     }
 
     return 0;

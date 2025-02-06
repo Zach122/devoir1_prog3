@@ -10,6 +10,7 @@ public:
 	~Liste();
 	void ajouter(vector<float>);
 	int tailleListe();
+	const std::vector<std::vector<float>>& getDonnees();
 	//Noeud* getPremierPointeur();
 };
 

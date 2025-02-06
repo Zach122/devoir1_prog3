@@ -2,13 +2,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Liste.h"
 using namespace std;
 
 vector<float> ConvertirLigneAFloat(const std::vector<std::string>&);
-std::vector<std::vector<std::string>> ImportationDonnees(const std::string);
-std::vector<float> ConvertirLigneAFloat(const std::vector<std::string>&);
-std::vector<std::vector<float>> GetTrainData(float, const std::vector<std::vector<std::string>>&);
-std::vector<std::vector<float>> GetTestData(float, const std::vector<std::vector<std::string>>&);class RessourceLoader {
-void GetTrainDataLinked(float ratio, const std::vector<std::vector<std::string>>& donnees);
-};
+Liste GetTrainDataLinked(float, const std::string&);
+Liste GetTestDataLinked(float, const std::string&);
+std::vector<std::vector<std::string>> ImportationDonnees(const std::string&);
 
