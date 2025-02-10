@@ -35,10 +35,10 @@
     <ClInclude Include="RessourceLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Noeud.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Liste.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Noeud.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

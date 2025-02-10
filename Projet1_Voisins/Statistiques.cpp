@@ -60,6 +60,7 @@ float CalculerMediane(vector<float> tableau)
         return (tableau[milieu - 1] + tableau[milieu]) / 2.0f;
     }
 }
+
 /// <summary>
 /// Méthode qui calcul l'écrat type des valeurs reçues
 /// </summary>
@@ -82,6 +83,7 @@ float CalculerEcartType(vector<float> tableau)
     //On retourne la racine
     return sqrt(divisionSommeEcartNombre);
 }
+
 /// <summary>
 /// Méthode qui calcule la distance Euclidienne entre dux points.
 /// </summary>

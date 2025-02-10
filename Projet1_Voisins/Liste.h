@@ -1,6 +1,10 @@
 #pragma once
 #include <vector>
 #include "Noeud.h"
+
+/// <summary>
+/// Classe représentant la liste de noeud.
+/// </summary>
 class Liste
 {
 private:
