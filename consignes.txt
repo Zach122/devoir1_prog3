@@ -1,0 +1,53 @@
+Voisins
+Échéance :27 janvier 2025 08:00
+Instructions
+Semaine 1
+
+Créer l'application console qui s'appelle Voisins
+
+Le programme principal vous servira à tester vos méthodes et classes.
+Une collection de méthodes intitulée Statistiques qui contient :
+Les méthodes pour calculer la moyenne, la médiane et l'écart type
+La méthode qui calcule la distance Euclidienne entre deux points qui peuvent avoir de 2 à une infinité de dimensions (ex: (x, y), (x,y,z), (x,y,z,t,u,v,w)
+La méthode qui calcule la distance de Manhattan entre deux points qui peuvent avoir de 2 à une infinité de dimensions
+Une classe ResourceLoader qui charge les données d'un fichier csv en mémoire soit à la construction soit sur demande
+Déterminer les attributs nécessaires pour garder les données en mémoire 
+La méthode getTrainData retourne un tableau contenant k % des enregistrements
+La méthode getTestData retourne un tableau contenant les 1-k % des enregistrements
+Détails sur les attributs : Chaque ligne dans le dataset représente une instance sous la forme : 
+— acidité fixe (grammes d’acide tartrique/dm3 ) 
+— acide volatile (grammes d’acide acétique/dm3 )
+— acide citrique (g/dm3 ) 
+— sucre résiduel (g/dm3 ) 
+— chlorure de sodium (g/dm3 ) 
+— dioxyde de soufre libre (mg/dm3 )
+ — dioxyde de soufre total (mg/dm3 ) 
+— densité (g/cm3 ) 
+— pH 
+— sulfate de potassium (g/dm3 ) 
+— alcool (vol. %) 
+— bon 0 ou 1 (oui ou non) NE FAIT PAS PARTIE DU CALCUL DE DISTANCE
+La remise est un lien vers votre dépôt Git qui ne contient que les .h et .cpp
+
+Semaine 2 & 3
+
+Modifier la classe ResourceLoader en ajoutant des méthodes efficaces pour la récupération des enregistrements, en tenant compte des principes de programmation orientée objet.
+
+Les méthodes getTrainDataLinked et getTestDataLinked retournent une structure de données utilisant le principe de chaînage (vu au cours du 27 janvier) .
+Un document accompagnateur décrit et justifie les choix effectués lors de votre développement de la classe ResourceLoader et de votre implémentation du chaînage
+À vous de déterminer et justifier la façon d'accéder au données (enregistrement et attributs d'un enregistrement) dans un document accompagnateur.
+Semaine 4 (À venir)
+
+
+Annexes 
+
+Exemples de justification et sa valeur :
+" J'ai fait une recherche sur internet/ai. J'ai modifié le code pour séparer mon string en morceaux. "
+D'accord internet fonctionne bien. 0/5
+" J'ai trouvé une méthode qui fait du regex et je l'ai changé pour séparer le string, ça marche alors c'est bon. "
+Toujours pas désolé. 0/5
+" En cherchant, Copilot me suggère une méthode utilisant le regex. J'ai constaté que regex est précédé de std:: alors j'ai été voir dans la librairie standard de C++ pour savoir comment l'utiliser correctement. Elle n'est pas vraiment faite pour séparer des string mais j'ai été capable d'adapter la méthode pour arriver au résultat espéré."
+Ouin, pas pire. Il y a de la réflexion et de la vérification mais la recherche s'arrête vite sur une solution tricottée. 2/5
+"J'ai cherché avec plusieurs outils. Copilot suggère une méthode utilisant le regex. Elle fonctionne mais en consultant la librairie standard je vois bien qu'elle n'est pas faite pour ça. En faisant d'autres recherches j'ai vu plusieurs codes qui utilisent StringStream. C'est un objet de la librairie standard aussi et il est fait pour traiter des strings comme si c'était des flux. La référence que j'ai utilisé pour mieux la comprendre est GeeksforGeeks. J'ai créer une méthode pour le tester dans ma collection de tests du projet en utilisant une donnée bidon similaire aux données à traiter et le résultat est satisfaisant.
+Super! J'ai un technicien développeur qui réfléchit et test ses solutions! 5/5
+Documents de référence
